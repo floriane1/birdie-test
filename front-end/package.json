@@ -3,10 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
+    "@styled-icons/fa-solid": "^10.22.0",
+    "@styled-icons/ionicons-outline": "^10.18.0",
+    "@styled-icons/material": "^10.18.0",
+    "@styled-icons/remix-fill": "^10.18.0",
+    "@styled-icons/styled-icon": "^10.6.3",
+    "@types/react-vertical-timeline-component": "^3.0.0",
+    "axios": "^0.20.0",
+    "dayjs": "^1.9.3",
+    "react": "^16.14.0",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.2.1",
     "react-scripts-redux-ts": "1.2.1",
+    "react-vertical-timeline-component": "^3.3.0",
+    "redux": "^4.0.5",
     "redux-saga": "^1.0.2",
+    "reselect": "^4.0.0",
     "styled-components": "^4.2.0"
   },
   "scripts": {
@@ -15,7 +27,13 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "create:component": "./node_modules/hygen/lib/bin.js component create",
-    "create:store:item": "./node_modules/hygen/lib/bin.js store create"
+    "create:store:item": "./node_modules/hygen/lib/bin.js store create",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "singleQuote": true
   },
   "jest": {
     "moduleNameMapper": {
@@ -31,7 +49,11 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.0.9",
     "@types/redux": "^3.6.0",
-    "@types/styled-components": "^4.1.15",
-    "typescript": "^3.4.5"
-  }
+    "@types/styled-components": "^5.1.4",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^5.0.0",
+    "typescript": "^3.5.3"
+  },
+  "proxy": "http://localhost:8000"
 }
