@@ -5,6 +5,7 @@ import { getEvents, getAlertsRaised } from '@App/store/selectors';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { fetchEventsRequest } from '@App/store/actions';
+import { CARE_RECIPIENT_DEFAULT_ID } from '@App/store/config';
 
 import Title from '@App/components/Title';
 import Logo from '@App/components/Logo';
@@ -41,7 +42,7 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   componentDidMount(): void {
-    this.props.fetchEventsRequest(process.env.CARE_RECIPIENT_DEFAULT_ID!);
+    this.props.fetchEventsRequest(CARE_RECIPIENT_DEFAULT_ID);
   }
 
   public render() {
