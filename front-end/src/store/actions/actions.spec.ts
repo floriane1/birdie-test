@@ -20,15 +20,17 @@ describe('Actions', () => {
     const payload: Event[] = [];
     const expectedAction = {
       type: FETCH_EVENTS_SUCCESS,
-      payload: payload,
+      payload,
     };
     expect(actions.fetchEventsSuccess(payload)).toEqual(expectedAction);
   });
 
   it('should dispatch an error in fetching events', () => {
+    const payload: string = 'Error message';
     const expectedAction = {
       type: FETCH_EVENTS_ERROR,
+      payload,
     };
-    expect(actions.fetchEventsError()).toEqual(expectedAction);
+    expect(actions.fetchEventsError(payload)).toEqual(expectedAction);
   });
 });

@@ -7,32 +7,40 @@ import {
   FETCH_EVENTS_ERROR,
 } from '../types/index';
 
-export type RootState = Readonly<{
-  events: Event[];
+export interface EventState {
+  items: Event[];
   loading: boolean;
   error: boolean;
-}>;
+  errorMessage: string;
+}
 
-export const initialState: RootState = {
-  events: [],
+export const initialState: EventState = {
+  items: [],
   loading: false,
   error: false,
+  errorMessage: '',
 };
 
-export const eventsReducer = (
-  state: RootState = initialState,
+export const events = (
+  state: EventState = initialState,
   action: FetchEventsAction
-): RootState => {
+): EventState => {
   switch (action.type) {
     case FETCH_EVENTS_REQUEST:
       return { ...state, loading: true, error: false };
     case FETCH_EVENTS_SUCCESS:
-      return { ...state, events: action.payload, loading: false, error: false };
+      return { ...state, items: action.payload, loading: false, error: false };
     case FETCH_EVENTS_ERROR:
-      return { ...state, loading: false, error: true };
+      return {
+        ...state,
+        loading: false,
+        error: true,
+        errorMessage: action.payload,
+      };
     default:
       return state;
   }
 };
 
-export const rootReducer = combineReducers<RootState>({ eventsReducer });
+export const rootReducer = combineReducers({ events });
+export type RootState = ReturnType<typeof rootReducer>;

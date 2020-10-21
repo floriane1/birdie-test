@@ -24,8 +24,9 @@ export function fetchEventsSuccess(payload: Event[]): FetchEventsSuccessAction {
   };
 }
 
-export function fetchEventsError(): FetchEventsErrorAction {
+export function fetchEventsError(payload: string): FetchEventsErrorAction {
   return {
     type: FETCH_EVENTS_ERROR,
+    payload,
   };
 }

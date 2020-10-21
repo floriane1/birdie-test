@@ -1,5 +1,5 @@
 import { Event, EventType } from '../types';
-import { initialState, eventsReducer } from './index';
+import { initialState, events } from './index';
 import { FetchEventsAction } from '../types/index';
 import {
   fetchEventsRequest,
@@ -9,16 +9,12 @@ import {
 
 describe('Reducer', () => {
   it('should return the initial state', () => {
-    expect(eventsReducer(undefined, {} as FetchEventsAction)).toEqual(
-      initialState
-    );
+    expect(events(undefined, {} as FetchEventsAction)).toEqual(initialState);
   });
 
   it('should handle request to fetch events', () => {
     const careRecipientId = 'care-recipient-id-123';
-    expect(
-      eventsReducer(initialState, fetchEventsRequest(careRecipientId))
-    ).toEqual({
+    expect(events(initialState, fetchEventsRequest(careRecipientId))).toEqual({
       ...initialState,
       loading: true,
     });
@@ -31,18 +27,18 @@ describe('Reducer', () => {
       care_recipient_id: 'care-recipient-id-123',
       timestamp: '2019-04-24T02:00:11.187Z',
     };
-    expect(
-      eventsReducer(initialState, fetchEventsSuccess([eventTest]))
-    ).toEqual({
+    expect(events(initialState, fetchEventsSuccess([eventTest]))).toEqual({
       ...initialState,
-      events: [eventTest],
+      items: [eventTest],
     });
   });
 
   it('should handle error in fetching events', () => {
-    expect(eventsReducer(initialState, fetchEventsError())).toEqual({
+    const errorMessage: string = 'Error message';
+    expect(events(initialState, fetchEventsError(errorMessage))).toEqual({
       ...initialState,
       error: true,
+      errorMessage,
     });
   });
 });

@@ -16,6 +16,7 @@ export interface FetchEventsSuccessAction {
 
 export interface FetchEventsErrorAction {
   type: typeof FETCH_EVENTS_ERROR;
+  payload: string;
 }
 
 export type FetchEventsAction =
