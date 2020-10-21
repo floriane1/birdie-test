@@ -14,7 +14,8 @@
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "test": "jest",
     "test:watch": "jest --watch",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "ts-node src/index.ts"
   },
   "dependencies": {
     "@types/cors": "^2.8.8",

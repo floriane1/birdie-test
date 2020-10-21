@@ -8,7 +8,9 @@ careRecipientsController.get("/care-recipients", (_, res) => {
   dbPool.query(
     "SELECT DISTINCT care_recipient_id FROM events",
     (error, results) => {
-      if (error) return res.status(500).json(error);
+      if (error) {
+        return res.status(500).json(error);
+      }
       const careRecipientsIds: string[] = results.map(
         (r: { care_recipient_id: string }) => r.care_recipient_id
       );
@@ -19,9 +21,11 @@ careRecipientsController.get("/care-recipients", (_, res) => {
 
 careRecipientsController.get("/care-recipients/:id/events", (req, res) => {
   dbPool.query(
-    `SELECT payload FROM events WHERE care_recipient_id="${req.params.id}" ORDER BY timestamp`,
+    `SELECT payload FROM events WHERE care_recipient_id="${req.params.id}" ORDER BY timestamp DESC LIMIT 100`,
     (error, results) => {
-      if (error) return res.status(500).json(error);
+      if (error) {
+        return res.status(500).json(error);
+      }
       const events: Event[] = results.map((r: { payload: any }) =>
         JSON.parse(r.payload)
       );
