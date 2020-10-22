@@ -12,21 +12,21 @@ const eventTestA: Event = {
   id: 'event-id-A',
   event_type: EventType.ALERT_RAISED,
   care_recipient_id: 'care-recipient-id-123',
-  timestamp: '2019-04-24T02:00:11.187Z',
+  timestamp: new Date('2019-04-24T02:00:11.187Z'),
 };
 
 const eventTestB: Event = {
   id: 'event-id-B',
   event_type: EventType.ALERT_RAISED,
   care_recipient_id: 'care-recipient-id-123',
-  timestamp: '2019-05-24T02:00:11.187Z',
+  timestamp: new Date('2019-05-24T02:00:11.187Z'),
 };
 
 const eventTestC: Event = {
   id: 'event-id-C',
   event_type: EventType.CONCERN_RAISED,
   care_recipient_id: 'care-recipient-id-123',
-  timestamp: '2019-06-24T02:00:11.187Z',
+  timestamp: new Date('2019-06-24T02:00:11.187Z'),
   severity: 'high',
 };
 

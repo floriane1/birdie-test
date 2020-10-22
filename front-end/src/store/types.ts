@@ -2,7 +2,7 @@ export interface Event {
   id: string;
   event_type: EventType;
   care_recipient_id: string;
-  timestamp: string;
+  timestamp: Date;
   visit_id?: string;
   caregiver_id?: string;
   observation_event_id?: string;

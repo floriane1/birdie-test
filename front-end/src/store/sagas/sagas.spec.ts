@@ -11,7 +11,8 @@ describe('Fetch events', () => {
   it('takes correct endpoint', () => {
     expect(gen.next().value).toEqual(
       call(
-        axios.get, '/care-recipients/e3e2bff8-d318-4760-beea-841a75f00227/events'
+        axios.get,
+        '/care-recipients/e3e2bff8-d318-4760-beea-841a75f00227/events'
       )
     );
   });

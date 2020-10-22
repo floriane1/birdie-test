@@ -25,7 +25,7 @@ describe('Reducer', () => {
       id: 'event-id-123',
       event_type: EventType.ALERT_RAISED,
       care_recipient_id: 'care-recipient-id-123',
-      timestamp: '2019-04-24T02:00:11.187Z',
+      timestamp: new Date('2019-04-24T02:00:11.187Z'),
     };
     expect(events(initialState, fetchEventsSuccess([eventTest]))).toEqual({
       ...initialState,
