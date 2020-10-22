@@ -24,7 +24,6 @@ export const EventsTimeline = ({ events }: EventsTimelineProps) => {
           {events.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
-          ;
         </VerticalTimeline>
       )}
     </TimelineContainer>

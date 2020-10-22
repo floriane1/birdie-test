@@ -19,7 +19,7 @@ interface AppState {}
 const GlobalStyle = createGlobalStyle`
   body {
     height: 100vh;
-    background-color: #E3E3E3;
+    background-color: #F4F4F4;
     font-family: sans-serif;
     > div {
       height: 100%;

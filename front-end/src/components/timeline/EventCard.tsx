@@ -130,15 +130,13 @@ const eventAttributes = (event: Event): EventAttributes => {
 };
 
 export const EventCard = ({ event }: EventCardProps) => {
-  const { id, event_type } = event;
-  let { timestamp } = event;
-  timestamp = new Date(timestamp).toISOString();
+  const { id, event_type, timestamp } = event;
   const eventTitle: string =
     event_type.charAt(0).toUpperCase() + event_type.slice(1).replace(/_/g, ' ');
   const Icon = eventAttributes(event).icon;
   return (
     <VerticalTimelineElement
-      date={timestamp}
+      date={dayjs(timestamp).fromNow()}
       iconStyle={{
         color: colors.white,
         background: eventAttributes(event).color,

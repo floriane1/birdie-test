@@ -4,6 +4,9 @@ import { Event } from '@App/store/types.ts';
 import Title from './Title';
 import SubTitle from './SubTitle';
 import { CheckCircle, ExclamationTriangle } from '@styled-icons/fa-solid';
+import * as dayjs from 'dayjs';
+import * as relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 type AlertProps = {
   events: Event[];
@@ -17,7 +20,7 @@ const AlertContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row;
-  margin: 30px 0px;
+  margin: 20px 0px;
 `;
 
 const IconContainer = styled.div`
@@ -46,13 +49,13 @@ const Alert = ({ events, alerts }: AlertProps) => {
           <Title>
             {alerts.length}
             {alerts.length > 1 ? ' alerts have ' : ' alert has '}
-            been raised since {events[events.length - 1].timestamp}
+            been raised since {dayjs(events[events.length - 1].timestamp).format('MMMM D, YYYY')}
           </Title>
         )}
         {alerts.length > 0 && (
           <SubTitle>
             {alerts.length > 1 ? 'The last one was ' : 'It was '}
-            {alerts[0].timestamp}
+            {dayjs(alerts[0].timestamp).fromNow()}
           </SubTitle>
         )}
       </div>
