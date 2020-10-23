@@ -1,5 +1,6 @@
 # Birdie Developer Test
-We would like to thank you for taking our developer test. We understand that often candidates will have many of these tests to complete. Therefore we think it's important to cut straight to the important stuff. With that in mind, we've gone ahead and created a boilerplate that mostly represents the kind of technical stack we work with. This saves you from having to create needless boilerplate code that does little to demonstrate your potential as a developer.
+
+**You can find the deployed app [here](https://floriane-birdie-test.herokuapp.com/)**
 
 ## Context
 
@@ -10,8 +11,8 @@ These could be anything from the recording of their mood (happy, sad, bored, con
 Each of these observations are recorded as events in our database. Here's an example of a mood observation recorded
 in this event format:
 
-``` json
-{  
+```json
+{
    "id":"decaa026-2ce5-49cb-aff9-92326b85a98c",
    "event_type":"mood_observation",
    "visit_id":"39b94aab-cc35-4874-807f-c23472aec663",
@@ -38,17 +39,17 @@ The database (we should have sent you credentials) contains some of these observ
 
 ## Challenge
 
-*Display the information to a family member*
+_Display the information to a family member_
 
 #### Your challenge is to clone this repository and create a small web application to visualize these observations, so that looking at it is valuable to a family member of this care recipient.
 
 This could mean presenting it in the following forms:
 
- - A table
- - A graph
- - A timeline
+- A table
+- A graph
+- A timeline
 
- Or any other way/combination of those. We are test driven here at Birdie so please make sure you write tests to validate your work.
+Or any other way/combination of those. We are test driven here at Birdie so please make sure you write tests to validate your work.
 
 ## Deliverables
 
@@ -61,38 +62,45 @@ This could mean presenting it in the following forms:
 Here's the technical stack this boilerplate was made with:
 
 ### Front end
-* [React](https://reactjs.org/)
-* [Redux](https://redux.js.org/introduction/getting-started)
-* [TypeScript](https://www.typescriptlang.org/)
-* [Redux sagas](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
-* [Styled components](https://www.styled-components.com/)
+
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/introduction/getting-started)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Redux sagas](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
+- [Styled components](https://www.styled-components.com/)
 
 ### Back end
-* [Express](https://expressjs.com/)
-* [MySQL](https://www.mysql.com/)
-* [TypeScript](https://www.typescriptlang.org/)
+
+- [Express](https://expressjs.com/)
+- [MySQL](https://www.mysql.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## Usage
 
 1. Start the API. (Run the following commands within the `backend` folder)
 
    a. Install the dependencies
+
    ```
    npm install
    ```
-   
+
    b. Run the HTTP server (will start on port `8000`)
+
    ```
    npm run dev
    ```
-2. Start the React app  (Run the following commands within the `front-end` folder)
 
-    a. Install the dependencies
+2. Start the React app (Run the following commands within the `front-end` folder)
+
+   a. Install the dependencies
+
    ```
    npm install
    ```
-   
+
    b. Run the application (will start on port `3000`)
+
    ```
    npm start
    ```
