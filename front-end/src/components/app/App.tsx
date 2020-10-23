@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { RootState } from '@App/store/reducers';
-import { getEvents, getAlertsRaised } from '@App/store/selectors';
+import { getEventsSorted, getAlertsRaised } from '@App/store/selectors';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { fetchEventsRequest } from '@App/store/actions';
@@ -36,7 +36,7 @@ const AppContainer = styled.div`
   flex-direction: column;
 `;
 
-class App extends React.Component<AppProps, AppState> {
+export class App extends React.Component<AppProps, AppState> {
   public constructor(props: AppProps) {
     super(props);
   }
@@ -67,7 +67,7 @@ class App extends React.Component<AppProps, AppState> {
 
 const mapStateToProps = (state: RootState) => {
   return {
-    events: getEvents(state),
+    events: getEventsSorted()(state),
     alerts: getAlertsRaised()(state),
     loading: state.events.loading,
     error: state.events.error,

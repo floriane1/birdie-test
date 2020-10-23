@@ -4,6 +4,11 @@ import { EventType } from '../types';
 
 export const getEvents = (state: RootState) => state.events.items;
 
+export const getEventsSorted = () =>
+  createSelector([getEvents], (events) =>
+    events.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
+  );
+
 export const filterEventsByType = (type: EventType) =>
   createSelector([getEvents], (events) =>
     events.filter((event) => event.event_type === type)

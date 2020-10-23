@@ -1,5 +1,6 @@
 import {
   getEvents,
+  getEventsSorted,
   filterEventsByType,
   getAlertsRaised,
   getConcernsRaisedBySeverity,
@@ -59,6 +60,16 @@ describe('Selectors', () => {
       expect(getAlertsRaised()(stateTest)).toMatchObject([
         eventTestA,
         eventTestB,
+      ]);
+    });
+  });
+
+  describe('getEventsSorted', () => {
+    it('sorts events by most recent date', () => {
+      expect(getEventsSorted()(stateTest)).toMatchObject([
+        eventTestC,
+        eventTestB,
+        eventTestA,
       ]);
     });
   });
