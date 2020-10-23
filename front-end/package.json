@@ -40,9 +40,14 @@
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
       "@App/(.*)": "<rootDir>/src/$1"
-    }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.7",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/history": "^4.7.2",
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.1",
@@ -51,6 +56,9 @@
     "@types/react-redux": "^7.0.9",
     "@types/redux": "^3.6.0",
     "@types/styled-components": "^5.1.4",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^5.0.0",
