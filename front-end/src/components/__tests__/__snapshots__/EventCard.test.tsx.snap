@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventCard renders correctly 1`] = `
+<VerticalTimelineElement
+  className=""
+  contentArrowStyle={null}
+  contentStyle={
+    Object {
+      "borderTop": "6px solid #ff0000",
+      "padding": "0 16px",
+    }
+  }
+  date="Tuesday, April 23, 11:00 PM"
+  dateClassName=""
+  icon={<Unknown />}
+  iconClassName=""
+  iconOnClick={null}
+  iconStyle={
+    Object {
+      "background": "#ff0000",
+      "color": "#ffffff",
+    }
+  }
+  id=""
+  intersectionObserverProps={
+    Object {
+      "rootMargin": "0px 0px -40px 0px",
+    }
+  }
+  key="event-id-A"
+  onTimelineElementClick={null}
+  position=""
+  style={null}
+  textClassName=""
+  visible={false}
+>
+  <h3
+    style={
+      Object {
+        "marginBottom": 0,
+      }
+    }
+  >
+    Alert raised
+  </h3>
+</VerticalTimelineElement>
+`;

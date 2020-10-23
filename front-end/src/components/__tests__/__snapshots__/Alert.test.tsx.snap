@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert renders correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <Styled(ExclamationTriangle) />
+  </styled.div>
+  <div>
+    <styled.h1>
+      2
+       alerts have 
+      been raised since 
+      June 23, 2019
+    </styled.h1>
+    <styled.h3>
+      The last one was 
+      a year ago
+    </styled.h3>
+  </div>
+</styled.div>
+`;
